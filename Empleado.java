@@ -6,6 +6,7 @@
  */
 package ies;
 
+//Atributos de la clase
 public class Empleado {
 	private int emp_no;
 	private String nombre;
@@ -13,38 +14,61 @@ public class Empleado {
 	private String pobla;
 	private String oficio;
 	private Double salario;
-	private Departamento dept;
 
+	/**
+	* @param emp_no  Codigo identificador del empleado.
+ 	* @param nombre  Nombre del empleado.
+ 	* @param apellido  Apellido del empleado.
+ 	* @param pobla  Ciudad del emplead.
+ 	* @param oficio  Oficio del empleado.
+ 	* @param salario  Salario del empleado.
+ 	**/
 	public Empleado(int emp_no, String nombre, String apellido, String pobla, String oficio,
-			Double salario, Departamento dept) {
+			Double salario) {
 		this.emp_no = emp_no;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.pobla = pobla;
 		this.oficio = oficio;
 		this.salario = salario;
-		this.dept = dept;
 	}
 	
-	public Empleado(int emp_no, String nombre, Double salario, Departamento dept) {
+	public Empleado(int emp_no, String nombre, Double salario) {
 		this.emp_no = emp_no;
 		this.nombre = nombre;
 		this.salario = salario;
-		this.dept = dept;
 	}
 
+	/**
+	 * Retorna el código identificador del empleado.
+	 *
+	 * @return El codigo identificador del empleado.
+	 */
 	public int getEmp_no() {
 		return emp_no;
 	}
 
+	/**
+	 * Establece el codigo identificador del empleado.
+	 *
+	 * @param emp_no
+	 */
 	public void setEmp_no(int emp_no) {
 		this.emp_no = emp_no;
 	}
-
+	/**
+	 * Retorna el nombre del empleado
+	 *
+	 * @return Nombre del empleado
+	 */
 	public String getNombre() {
 		return nombre;
 	}
-
+	/**
+	 * Introduce el nombre del empleado
+	 *
+	 * @param nombre  Nombre del empleado
+	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -73,19 +97,9 @@ public class Empleado {
 		this.salario = salario;
 	}
 	
-	
-	public Departamento getDept() {
-		return dept;
-	}
-
-	public void setDept(Departamento dept) {
-		this.dept = dept;
-	}
-	
 	public void subidasalario(Double subida) {
 		salario = salario + subida;
 	}
-	
 	private boolean comprobar(){
 		if (nombre.equals("")){
 			
